@@ -1,0 +1,7 @@
+
+<form action="cuenta" method="POST">
+    {% csrf_token %}
+    {{forms.as_p}}
+    <button type="submit">Crear</button>
+</form>
+
