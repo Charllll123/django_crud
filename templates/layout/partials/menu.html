@@ -1,3 +1,28 @@
 
 
-<nav class="nav"></nav>
+<nav class="nav">
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'tasks' %}">Tareas</a>
+        </li>
+        
+        {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'salir' %}">Salir</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'entrar' %}">Ingresar</a>
+            </li>
+            <li>
+                <a href="{% url 'cuenta' %}">Crear Cuenta</a>
+            </li>
+        {% endif %}
+        
+        
+        
+    </ul>
+</nav>

@@ -1,1 +1,19 @@
-<h1>Home</h1>
+{% extends "layout/base.html" %}
+
+{% block contenido %}
+    <h1>Home</h1>
+
+    {% if user.is_authenticated %}
+        <p>Hola, {{user.username|capfirst}}</p>
+    {%else%}
+        <p>Hola</p>    
+    {% endif %} 
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+{% endblock contenido %}

@@ -3,10 +3,27 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block css %}
+	  
+	{% endblock css %}
 
-	<title>Home|</title>
+	<title>Home| {% block tittle %}
+	  
+	{% endblock tittle %}</title>
 </head>
 <body>
 		
+	{% include "layout/partials/menu.html" %}
+
+	{% block contenido %}
+
+
+	{% endblock contenido %}
+
+	{% include "layout/partials/footer.html" %}
+
+	{% block javascript %}
+	  
+	{% endblock javascript %}
 </body>
 </html>

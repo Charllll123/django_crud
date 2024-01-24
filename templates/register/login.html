@@ -1,10 +1,10 @@
 {% extends "layout/base.html" %}
 
 {% block contenido %}
-  <form action="{% url 'cuenta' %}" method="POST">
+  <form action="{% url 'entrar' %}" method="POST">
     {% csrf_token %}
     {{forms.as_p}}
-    <button type="submit">Crear</button>
+    <button type="submit">Ingresar</button>
   </form>
 
   {% if messages %}
@@ -15,7 +15,6 @@
   </ul>
   {% endif %}
 {% endblock contenido %}
-
 
 
 
